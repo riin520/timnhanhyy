@@ -14,7 +14,7 @@ body {
 
 /* HEADER */
 header {
-  background-color: #3e2c23;
+  background-color: #2b2928;
   color: #f5f0e6;
   padding: 20px 50px;
   display: flex;
@@ -48,7 +48,7 @@ nav a:hover {
 /* Bên trái */
 .hero-left {
   flex: 1;
-  background-color: #3e2c23;
+  background-color: #9d6057;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,6 +85,15 @@ nav a:hover {
   transform: translateY(30px);
   animation: fadeUp 1s ease forwards;
   animation-delay: 0.5s;
+}
+.hero-right h4 {
+  font-size: 1rem;
+  color: #3e2c23;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 1.5s;
 }
 
 .hero-right p {
