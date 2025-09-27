@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ hàng - TIỆM NHÀ NHYY</title>
+    <link rel="stylesheet" href="css/shop.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">TIỆM NHÀ NHYY</div>
+      <nav>
+        <a href="index.html">Trang Chủ</a>
+        <a href="menu.html">Menu</a>
+        <a href="cart.html" class="active">Giỏ hàng</a>
+      </nav>
+    </header>
+
+    <!-- CART -->
+    <section class="cart-container">
+      <div class="cart-left">
+        <h2>Sản phẩm trong giỏ</h2>
+        <div id="cart-items"></div>
+      </div>
+
+      <div class="cart-right">
+        <h2>Thanh toán</h2>
+        <p><b>Tổng cộng: </b><span id="cart-total">0</span> VNĐ</p>
+
+        <div class="payment-methods">
+          <label>
+            <input type="radio" name="payment" value="cash" checked /> Tiền mặt </label
+          ><br />
+          <label>
+            <input type="radio" name="payment" value="bank" /> Chuyển khoản
+          </label>
+        </div>
+
+        <div id="bank-info" class="bank-info hidden">
+          <p><strong>Ngân hàng:</strong> MB Bank</p>
+          <p><strong>Số tài khoản:</strong> 123456789</p>
+          <p><strong>Chủ tài khoản:</strong> Nguyen Van A</p>
+          <img src="images/qr-momo.png" alt="QR Chuyển khoản" class="qr-img" />
+        </div>
+
+        <button id="checkout-btn">Thanh toán</button>
+      </div>
+    </section>
+
+    <!-- Popup thông báo -->
+    <div id="notification" class="notification">
+      <div class="notification-content">
+        <p id="notification-message"></p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 TIỆM NHÀ NHYY. All rights reserved.</p>
+    </footer>
+
+    <script src="js/shop.js"></script>
+  </body>
+</html>
