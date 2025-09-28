@@ -5,16 +5,16 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 // ========================
 const products = {
   coffee: [
-    { name: "Cà phê sữa", price: 25000, img: "images/coffee1.jpg" },
-    { name: "Cà phê đen", price: 20000, img: "images/coffee2.jpg" },
+    { name: "Cà phê sữa", price: 25000, img: "img/1.png" },
+    { name: "Cà phê đen", price: 20000, img: "img/2.png" },
   ],
   tea: [
-    { name: "Trà đào cam sả", price: 30000, img: "images/tea1.jpg" },
-    { name: "Trà sữa trân châu", price: 28000, img: "images/tea2.jpg" },
+    { name: "Trà đào cam sả", price: 30000, img: "img/tradaocamsa.png" },
+    { name: "Trà sữa trân châu", price: 28000, img: "img/trasua.png" },
   ],
   cake: [
-    { name: "Bánh tiramisu", price: 35000, img: "images/cake1.jpg" },
-    { name: "Bánh cheesecake", price: 32000, img: "images/cake2.jpg" },
+    { name: "Bánh tiramisu", price: 35000, img: "img/tiramisu.png" },
+    { name: "Bánh cheesecake", price: 32000, img: "img/cheesecake.png" },
   ],
 };
 
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
       updateCart();
 
       showNotification(
-        "Thanh toán thành công! 💖 Cảm ơn bạn đã ủng hộ TIỆM NHÀ NHYY"
+        'Thanh toán thành công!\nCảm ơn bạn đã ủng hộ "TIỆM NHÀ NHYY" 💖'
       );
     });
   }
@@ -220,4 +220,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   updateCart();
+});
+// ========================
+// NAV TOGGLE (menu.html, cart.html)
+// ========================
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navbar = document.getElementById("navbar");
+
+  if (menuToggle && navbar) {
+    menuToggle.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+  }
 });

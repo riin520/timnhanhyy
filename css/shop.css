@@ -8,10 +8,25 @@ body {
 header {
   background: #3e2c23;
   color: #fff;
-  padding: 15px 40px;
+  padding: 15px 20px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* logo và menu-toggle xếp dọc */
   align-items: center;
+  text-align: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px; /* tạo khoảng cách giữa logo và hamburger */
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  margin-bottom: 10px; /* cách nav xổ xuống */
 }
 
 header nav a {
@@ -32,19 +47,66 @@ header nav a.active {
 }
 
 .menu-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap; /* Cho phép xuống dòng */
+  justify-content: center; /* Luôn căn giữa các sản phẩm */
+  gap: 20px; /* Khoảng cách giữa card */
+  margin-top: 20px;
 }
 
 .item {
+  flex: 0 1 200px; /* mỗi sản phẩm tối đa 200px */
   background: #fff;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item button {
+  display: block;
+  width: 100%; /* full width ngang card */
+  background: #3e2c23;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.item button:hover {
+  background: #2b1d16;
+  transform: scale(1.03);
+}
+
+.item button:active {
+  transform: scale(0.97);
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.item img {
+  width: 100%;
+  max-height: 160px; /* ảnh nhỏ gọn hơn */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.item h3 {
+  font-size: 1rem;
+  margin: 8px 0 5px;
+}
+
+.item p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
 }
 .item:hover {
   transform: translateY(-5px);
@@ -354,4 +416,265 @@ footer {
 
 .remove-btn {
   margin-left: 10px;
+}
+/* ===================== */
+/* RESPONSIVE DESIGN     */
+/* ===================== */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  /* Menu */
+  .menu {
+    padding: 20px;
+  }
+
+  .menu-items {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+  }
+
+  .item h3 {
+    font-size: 1rem;
+  }
+
+  .item p {
+    font-size: 0.9rem;
+  }
+
+  .item button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Cart */
+  .cart-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .cart-left,
+  .cart-right {
+    width: 100%;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  /* Menu */
+  .menu-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .tab-btn {
+    flex: 1 1 45%;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .item {
+    padding: 10px;
+  }
+
+  .item img {
+    max-height: 140px;
+    object-fit: cover;
+  }
+
+  /* Cart */
+  .cart-container {
+    padding: 15px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .cart-item-qty {
+    justify-content: flex-start;
+  }
+
+  .cart-item-price {
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  #checkout-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Mobile nhỏ (≤ 480px) */
+@media (max-width: 480px) {
+  /* Menu */
+  .tab-btn {
+    flex: 1 1 100%;
+    font-size: 0.85rem;
+  }
+
+  .item h3 {
+    font-size: 0.95rem;
+  }
+
+  .item p {
+    font-size: 0.85rem;
+  }
+
+  /* Cart */
+  .cart-left h2,
+  .cart-right h2 {
+    font-size: 1.2rem;
+  }
+
+  .cart-item-name {
+    font-size: 0.9rem;
+  }
+
+  .cart-item-qty span {
+    font-size: 0.9rem;
+  }
+
+  .cart-item-price {
+    font-size: 0.85rem;
+  }
+
+  #checkout-btn {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+/* Đảm bảo ảnh sản phẩm hiển thị đẹp trên mọi thiết bị */
+.item img {
+  width: 100%;
+  height: auto; /* mặc định tự co chiều cao */
+  border-radius: 10px;
+  object-fit: cover; /* giữ tỉ lệ, cắt phần thừa */
+}
+
+/* Mobile: ảnh vuông để đồng đều */
+@media (max-width: 768px) {
+  .item img {
+    height: 180px; /* chiều cao cố định */
+    object-fit: cover; /* cắt gọn ảnh, không méo */
+  }
+}
+
+@media (max-width: 480px) {
+  .item img {
+    height: 150px; /* mobile nhỏ hơn */
+  }
+}
+/* ===================== */
+/* NAV RESPONSIVE        */
+/* ===================== */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    background-color: #3e2c23;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    padding: 15px 0;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  nav a {
+    display: block;
+    margin: 12px 0;
+    font-size: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav.active {
+    display: flex;
+    animation: slideDown 0.4s ease;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  nav {
+    position: static;
+    width: 100%;
+    background-color: #3e2c23;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    padding: 10px 0;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav.active {
+    display: flex;
+    animation: slideDown 0.4s ease;
+  }
+}
+/* Giới hạn kích thước ảnh sản phẩm */
+.item img {
+  width: 100%;
+  max-height: fit-content; /* ảnh không cao quá 220px */
+  max-width: fit-content;
+  border-radius: 10px;
+  object-fit: cover; /* cắt ảnh gọn lại, không bị méo */
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .item img {
+    max-height: 180px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .item img {
+    max-height: 150px;
+  }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+  .item img {
+    max-height: 120px;
+  }
 }
