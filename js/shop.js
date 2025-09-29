@@ -5,12 +5,66 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 // ========================
 const products = {
   coffee: [
-    { name: "Cà phê sữa", price: 25000, img: "img/1.png" },
-    { name: "Cà phê đen", price: 20000, img: "img/2.png" },
+    { name: "Cà phê sữa", price: 15000, img: "img/1.png" },
+    { name: "Cà phê đen", price: 10000, img: "img/2.png" },
+    { name: "Cà phê muối", price: 18000, img: "img/cafemuoi.png" },
+    { name: "Bạc xỉu", price: 15000, img: "img/bacxiu.png" },
+    { name: "Cà phê sữa tươi", price: 18000, img: "img/cafesuatuoi.png" },
+    { name: "Cà phê hạnh nhân", price: 25000, img: "img/cafehanhnhan.png" },
+    {
+      name: "Cà phê caramel kem muối",
+      price: 25000,
+      img: "img/cafekemmuoi.png",
+    },
+    {
+      name: "Cà phê bơ đậu phộng",
+      price: 25000,
+      img: "img/cafebodauphong.png",
+    },
+    { name: "Cà phê kem dẻo buôn mê", price: 25000, img: "img/cafebuonme.png" },
   ],
   tea: [
     { name: "Trà đào cam sả", price: 30000, img: "img/tradaocamsa.png" },
+    { name: "Trà chanh", price: 10000, img: "img/trachanh.png" },
+    { name: "Trà tắc", price: 20000, img: "img/tratac.png" },
+    { name: "Trà tắc cam xoài", price: 15000, img: "img/trataccamxoai.png" },
+    { name: "Trà đào", price: 20000, img: "img/tradao.png" },
+    { name: "Trà vải", price: 20000, img: "img/travai.png" },
+    { name: "Trà dâu", price: 20000, img: "img/tradau.png" },
     { name: "Trà sữa trân châu", price: 28000, img: "img/trasua.png" },
+  ],
+  matcha: [
+    { name: "Matcha Latte", price: 20000, img: "img/matchalatte.png" },
+    { name: "Matcha kem muối", price: 25000, img: "img/matchakemmuoi.png" },
+    { name: "Matcha sữa gấu", price: 25000, img: "img/matchasuagau.png" },
+    { name: "Matcha caramel", price: 25000, img: "img/matchacaramel.png" },
+    { name: "Coco Matcha", price: 25000, img: "img/cocomatcha.png" },
+    { name: "Dâu Matcha latte", price: 25000, img: "img/daumatchalatte.png" },
+  ],
+  cacao: [
+    { name: "Cacao sữa", price: 20000, img: "img/cacaosua.png" },
+    {
+      name: "Cacao sữa yến mạch",
+      price: 23000,
+      img: "img/cacaosuayenmach.png",
+    },
+    { name: "Cacao kem muối", price: 22000, img: "img/cacaokemmuoi.png" },
+    { name: "Cacao kem trứng", price: 25000, img: "img/cacaokemtrung.png" },
+    { name: "Cacao oreo", price: 25000, img: "img/cacaooreo.png" },
+  ],
+  yaourt: [
+    { name: "Yaourt việt quất ", price: 20000, img: "img/yaourtvietquat.png" },
+    { name: "Yaourt chuối", price: 23000, img: "img/yaourtchuoi.png" },
+    { name: "Yaourt xoài", price: 22000, img: "img/yaourtxoai.png" },
+    { name: "Yaourt Dâu", price: 25000, img: "img/yaourtdau.png" },
+    { name: "Yaourt oreo", price: 25000, img: "img/yaourtoreo.png" },
+  ],
+  nuocep: [
+    { name: "Nước ép cam", price: 15000, img: "img/cam.png" },
+    { name: "Nước ép dưa hấu", price: 18000, img: "img/duahau.png" },
+    { name: "Nước ép dứa", price: 18000, img: "img/dua.png" },
+    { name: "Nước ép táo", price: 20000, img: "img/tao.png" },
+    { name: "Nước ép dừa tươi", price: 15000, img: "img/duatuoi.png" },
   ],
   cake: [
     { name: "Bánh tiramisu", price: 35000, img: "img/tiramisu.png" },
